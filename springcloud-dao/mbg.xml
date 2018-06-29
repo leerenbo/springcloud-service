@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <context id="sys" targetRuntime="MyBatis3">
+        <plugin type="org.mybatis.generator.plugins.MapperAnnotationPlugin"></plugin>
+        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"></plugin>
+        <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"></plugin>
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"></plugin>
+        <plugin type="org.mybatis.generator.plugins.FluentBuilderMethodsPlugin"></plugin>
+
+
+        <commentGenerator>
+            <!--<property name="suppressDate" value="true"/>-->
+            <!--<property name="suppressAllComments" value="true"/>-->
+            <property name="addRemarkComments" value="true"/>
+            <property name="dateFormat" value="yyyy-MM-dd hh:mm:ss"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://172.100.101.84:3306/nybj?useUnicode=true&amp;characterEncoding=utf-8"
+                        userId="root"
+                        password="6l6mzR4srE">
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="com.yibaijin.service.boot.dao.model.db.auth"
+                            targetProject="src/main/java/">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="mappers.generator.auth" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.yibaijin.service.boot.dao.mapper.auth"
+                             targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <table schema="nybj" tableName="auth_user" domainObjectName="AuthUserGPO">
+            <generatedKey column="id" sqlStatement="JDBC"></generatedKey>
+        </table>
+        <table schema="nybj" tableName="auth_user_role_association" domainObjectName="AuthUserRoleAssociationGPO">
+            <generatedKey column="id" sqlStatement="JDBC"></generatedKey>
+        </table>
+        <table schema="nybj" tableName="auth_role" domainObjectName="AuthRoleGPO">
+            <generatedKey column="id" sqlStatement="JDBC"></generatedKey>
+        </table>
+        <table schema="nybj" tableName="auth_group" domainObjectName="AuthGroupGPO">
+            <generatedKey column="id" sqlStatement="JDBC"></generatedKey>
+        </table>
+        <table schema="nybj" tableName="auth_user_group_association" domainObjectName="AuthUserGroupAssociationGPO">
+            <generatedKey column="id" sqlStatement="JDBC"></generatedKey>
+        </table>
+        <table schema="nybj" tableName="auth_function" domainObjectName="AuthFunctionGPO">
+            <generatedKey column="id" sqlStatement="JDBC"></generatedKey>
+        </table>
+        <table schema="nybj" tableName="auth_role_function_association" domainObjectName="AuthRoleFunctionAssociationGPO">
+            <generatedKey column="id" sqlStatement="JDBC"></generatedKey>
+        </table>
+    </context>
+</generatorConfiguration>
