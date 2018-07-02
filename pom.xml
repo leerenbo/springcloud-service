@@ -58,6 +58,13 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <artifactId>springcloud-cclient</artifactId>
+                <groupId>com.yibaijin</groupId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+
+
 
             <dependency>
                 <!-- Import dependency management from Spring Boot -->
